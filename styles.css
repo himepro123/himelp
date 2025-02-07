@@ -160,11 +160,11 @@ h1 {
     .icons {
         display: flex;
         justify-content: center; /* 中央配置 */
-        gap: 5px; /* アイコン間隔 */
+        gap: 10px; /* アイコン間隔 */
         flex-wrap: wrap; /* はみ出さないように */
     }
 
     .icons a {
-        font-size: 14px; /* アイコンサイズを調整 */
+        font-size: 19px; /* アイコンサイズを調整 */
     }
 }
