@@ -1,0 +1,170 @@
+/* 基本設定 */
+/*body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #FF5F6D, #FFC371);
+    background-image: url('image/b.png'); /* 背景画像 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* スクロール固定 
+    text-align: center;
+    padding: 20px;
+} */
+
+body {
+    background-image: url("image/b.png"); /* 背景画像のパス */
+    background-size: cover; /* 画面全体にフィット */
+    background-repeat: no-repeat; /* 繰り返しなし */
+    background-attachment: fixed; /* スクロールしても固定 */
+    background-position: center; /* 画像を中央に配置 */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("image/a.png"); /* グリッド線の画像 */
+    background-size: contain; /* 画像サイズを維持 */
+    background-repeat: repeat; /* 繰り返しで格子線を表示 */
+    opacity: 0.5; /* 透明度調整（好みで変更） */
+    pointer-events: none; /* クリックできる要素を邪魔しない */
+    z-index: -1; /* 背景として扱う */
+}
+
+
+/* ヘッダー */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 250px;
+    max-width: 80%;
+    display: block;
+    margin: 20px auto;
+}
+
+h1 {
+    font-size: 24px;
+    background: white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* メンバー一覧 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* メンバーカード */
+.member {
+    display: flex;  /* 横並びにする */
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;  /* 長方形にする */
+    height: 150px; /* 高さを抑える */
+}
+.member:hover {
+    transform: scale(1.05);
+}
+
+.member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-right: 10px; /* 画像とテキストの間に余白 */
+}
+/* メンバー情報 */
+.info {
+    flex: 1;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* 職業 */
+.role {
+    font-size: 14px;
+    color: gray;
+    margin: 5px 0;
+}
+
+/* SNSアイコン */
+.icons {
+    display: flex;
+    gap: 8px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    transition: color 0.2s ease;
+}
+
+.icons a:hover {
+    color: #ff4081;
+}
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2列を維持 */
+        gap: 10px;
+        justify-content: center; /* 中央寄せ */
+    }
+
+    .member {
+        width: 150px; /* スマホ用に少し小さく */
+        height: 200px; /* 縦幅も調整 */
+        display: flex;
+        flex-direction: column; /* 縦並び */
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        overflow: hidden; /* はみ出し防止 */
+    }
+
+    .member img {
+        width: 100px;
+        height: 100px; /* 画像を正方形に */
+        margin-bottom: 5px; /* テキストとの間隔 */
+    }
+
+    .name {
+        font-size: 14px; /* さらに縮小 */
+        word-wrap: break-word; /* 長い名前を折り返し */
+        max-width: 100%; /* はみ出し防止 */
+    }
+
+    .role {
+        font-size: 11px;
+        max-width: 100%;
+        word-wrap: break-word; /* 折り返し */
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center; /* 中央配置 */
+        gap: 12px; /* アイコン間隔 */
+        flex-wrap: wrap; /* はみ出さないように */
+    }
+
+    .icons a {
+        font-size: 25px; /* アイコンサイズを調整 */
+    }
+}
